@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{ title }} Movie</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="movieEditForm">
+        <div class="form-group">
+          <label for="movieNameInput">Name</label>
+          <input type="text" class="form-control mt-2" id="movieNameInput" formControlName="name">
+        </div>
+        <div class="form-group mt-2">
+          <label for="movieDescriptionArea">Description</label>
+          <textarea class="form-control mt-2" id="movieDescriptionArea" rows="3" formControlName="description"></textarea>
+        </div>
+        <div class="form-group mt-2">
+            <label for="imdbInput">IMDB</label>
+            <input type="text" class="form-control mt-2" id="imdbInput" formControlName="imdb">
+          </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+    <button type="button" class="btn btn-outline-success" (click)="confirm()">Save</button>
+</div>
