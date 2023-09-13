@@ -1,0 +1,55 @@
+<ng-container>
+    <div class="row d-flex justify-content-center align-items-center" style="min-height: 60vh;">
+        <div class="col-md-3 col-sm-12 "> 
+            <div class="card">
+                <div class="card-body">
+                    <div class="title mt-3" style="text-align: center;">
+                        <p class="card-title">Log in to your account</p>
+                    </div>
+                    <form class="form" (submit)="onSubmit()">
+                        <div class="form-group ps-3 pe-3 p-2">
+                          <!-- <label class="email-label" for="emailInput">Email address</label> -->
+                          <input type="email" class="form-control mt-2" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group ps-3 pe-3 p-2">
+                          <!-- <label class="password-label" for="passwordInput">Password</label> -->
+                          <input type="password" class="form-control mt-2" id="passworsInput" placeholder="Password">
+                        </div>
+                        <div class="form-group ps-3 pe-3 mt-2">
+                            <a href="#" class="forget float-end">forgot password?</a>
+                        </div>
+                        <div class="form-group ps-3 pe-3 mt-2">
+                            <button type="submit" class="btn btn-primary login"><fa-icon [icon]="faSignIn"></fa-icon><span class="ms-2" style="font-size: 18px;">Sign in</span></button>
+                        </div>
+                    </form>     
+                </div>
+                <div class="ps-5 pe-5 mt-3 mb-4" style="text-align: center;">
+                    <p class="sub-row">OR</p>
+                    <div>
+                        <span>Don't have an account?</span>
+                    </div>
+                    <div>
+                        <a href="#" class="btn sign-up">Create account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+
+<!-- <button (click)="open()">open</button>
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title">Movie</h4>
+        <button type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <h2>hello</h2>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" >Close</button>
+    </div>
+</ng-template> -->
+
+  

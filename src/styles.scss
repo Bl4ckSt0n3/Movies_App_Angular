@@ -2,3 +2,14 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+app-root {
+    display: inline-block;
+    width: 100%;
+}
+body, html, app-root {
+    height: 100%;
+}
+body {
+    background-color: #DEF3F6;
+}

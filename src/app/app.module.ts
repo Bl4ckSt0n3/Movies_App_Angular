@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,11 +9,13 @@ import { PagesRoutingModule } from './modules/pages/pages-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AuthComponent } from './core/auth/auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,6 +24,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     PagesRoutingModule,
     NgbModule,
     FontAwesomeModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

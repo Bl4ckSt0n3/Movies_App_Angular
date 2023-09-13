@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MoviesComponent } from './modules/pages/movies/movies.component';
+import { AuthComponent } from './core/auth/auth.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'pages/movies' },
+  { path: '', pathMatch: 'full', redirectTo: 'auth' },
   {
     path: 'pages',
     loadChildren: () => import('./modules/pages/pages.module').then(module => module.PagesModule)
-  }
+  },
+  { path: 'auth', component: AuthComponent}
 ];
 
 @NgModule({

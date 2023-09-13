@@ -1,0 +1,75 @@
+.row {
+    --bs-gutter-x: 0 !important;
+}
+.card-title {
+    color: #083156;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input:focus, input.form-control:focus {
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.form-control {
+    height: 50px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    border-bottom: 1px solid rgb(170, 170, 170);
+    border-radius: 0;
+    text-decoration: none;
+}
+.form-control:focus {
+    border-bottom: 3px solid #083156;
+}
+
+.email-label .password-label {
+    font-family: 'Open Sans', sans-serif;
+}
+.login {
+    background-color: #083156;
+    border: 0.5px solid #083156;
+}
+.login:hover {
+    background-color: #1e415f;
+}
+.forget {
+    text-decoration: none;
+    background-color: none;
+    color: rgb(170, 170, 170);
+    font-family: 'Open Sans', sans-serif;
+    font-weight:700 ;
+    font-size: 14px;
+}
+.forget:hover {
+    color: rgb(255, 192, 56);
+}
+.sub-row {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    color: rgb(196, 196, 196);
+}
+.sub-row:before, .sub-row:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 0.5px solid rgb(197, 196, 196);
+    margin: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.sign-up {
+    background-color: none;
+    color: rgb(170, 170, 170);
+    font-family: 'Open Sans', sans-serif;
+    font-weight:700 ;
+    font-size: 15px;
+}
+.sign-up:hover {
+    color: #083156;
+}
