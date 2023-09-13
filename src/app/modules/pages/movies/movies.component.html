@@ -18,14 +18,15 @@
         </div>
         <div class="col-md-12 movies-body mb-3" >
             <div class="row d-flex">
-                <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-self-stretch" *ngFor="let movie of movieList">
-                    <div class="card mt-5" style="width: 18rem; height: auto;">
+                <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-self-stretch" *ngFor="let movie of movieList" >
+                    <div class="card mt-5" style="width: 18rem; height: auto;" appHighlight>
                         <div class="card-body">
-                          <h5 class="card-title">{{ movie.name }}</h5>
-                          <h6 class="card-subtitle mb-2 text-muted">IMDB: {{ movie.imdb }}</h6>
-                          <p class="card-text">{{ movie.description }}</p>
-                          <button class="btn btn-secondary" (click)="editModalOpen(movie.name, movie.description, movie.imdb, movie.id)"><span><fa-icon [icon]="faEdit"></fa-icon></span></button>
-                          <button class="btn btn-danger ms-2" (click)="deleteMovie(movie.id)"><fa-icon [icon]="faRemove"></fa-icon></button>
+                            <h5 class="card-title">{{ movie.name }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">IMDB: {{ movie.imdb }}</h6>
+                            <p class="card-text">{{ movie.description }}</p>
+                            <button class="btn btn-outline-secondary" (click)="editModalOpen(movie.name, movie.description, movie.imdb, movie.id)"><span><fa-icon [icon]="faEdit"></fa-icon></span></button>
+                            <button class="btn btn-danger ms-2" (click)="deleteMovie(movie.id)"><fa-icon [icon]="faRemove"></fa-icon></button>
+                            <button class="btn btn-danger buy-btn mt-3">Buy</button>
                         </div>
                     </div>
                 </div>

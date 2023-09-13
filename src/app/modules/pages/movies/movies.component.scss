@@ -1,3 +1,20 @@
 .title-row {
     border-bottom: 1px solid rgb(180, 180, 180);
 }
+.card {
+    border-radius: 4px !important;
+}
+.buy-btn {
+    background-color: #e53e1e;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.buy-btn:hover {
+    background-color: #cf2d0c;
+}
+.card-text {
+    border-top: 0.5px solid rgb(230, 230, 230);
+    border-bottom: 0.5px solid rgb(230, 230, 230);
+    border-radius: 0;
+    padding: 10px;
+}

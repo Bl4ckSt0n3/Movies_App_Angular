@@ -10,7 +10,8 @@ describe('MoviesService', () => {
     service = TestBed.inject(MoviesService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  it('should be created as a list', () => {
+    const lengthOfGetAllMethod: number = service.getAll().length;
+    expect(lengthOfGetAllMethod).toBeGreaterThan(1);
   });
 });
