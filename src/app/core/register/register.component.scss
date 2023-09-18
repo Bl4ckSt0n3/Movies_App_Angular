@@ -1,0 +1,49 @@
+.row {
+    --bs-gutter-x: 0 !important;
+}
+.card-title {
+    color: #083156;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+}
+.card {
+    border-radius: 0;
+    border: 0;
+}
+
+input:focus, input.form-control:focus {
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.form-control {
+    height: 50px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    border-bottom: 1px solid rgb(170, 170, 170);
+    border-radius: 0;
+    text-decoration: none;
+}
+.form-control:focus {
+    border-bottom: 3px solid #083156;
+}
+
+.email-label .password-label {
+    font-family: 'Open Sans', sans-serif;
+}
+.sign-in {
+    color: #fff;
+    background-color: #083156;
+    border: 0.5px solid #083156;
+}
+.sign-in:hover {
+    background-color: #1e415f;
+}
+
+.icon{
+    background-color: #fff;
+}
