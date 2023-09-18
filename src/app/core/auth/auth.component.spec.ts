@@ -19,4 +19,8 @@ describe('AuthComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should be false', () => {
+    expect(component.show).toBe(false);
+  });
 });
