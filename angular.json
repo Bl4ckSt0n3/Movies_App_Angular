@@ -63,6 +63,11 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "panates:build",
+            "proxyConfig": "src/proxy.conf.json",
+            "port": 4200
+          },
           "configurations": {
             "production": {
               "browserTarget": "panates:build:production"
