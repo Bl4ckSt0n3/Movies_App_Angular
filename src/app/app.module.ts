@@ -13,7 +13,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthComponent } from './core/auth/auth.component';
 import { RegisterComponent } from './core/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { JwtModule } from '@auth0/angular-jwt';
 
+export function tokenGetter() {
+  return localStorage.getItem('jwt');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +35,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ['127.0.0.1:3000'],
+        disallowedRoutes: [],
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
