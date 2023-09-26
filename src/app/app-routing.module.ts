@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './core/auth/auth.component';
 import { RegisterComponent } from './core/register/register.component';
 import { authGuard } from './services/shared/auth.guard';
+import { NotFoundComponent } from './modules/pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'auth' },
@@ -16,7 +17,7 @@ const routes: Routes = [
 
   // Note: If you add the Wildcard Route as the first route in Router Configuration 
   // then no other routes will be reached as the Wildcard
-  { path: '**', component: AuthComponent }, // wildcard route method
+  { path: '**', component: NotFoundComponent }, // wildcard route method
 ];
 
 // ****************** NOTE ******************** //
