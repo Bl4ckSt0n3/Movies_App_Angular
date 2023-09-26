@@ -39,10 +39,10 @@ export class AuthComponent {
     if (this.authForm.valid) {
       this.authService.auth(this.authForm).subscribe({
         next: (value: any) => {
-          alert(value);
-          console.log(value)
+          // set jwt using localstorage however it will be stored in cookie soon
+          localStorage.setItem("jwt", value.data);
           this.authForm.reset();
-          this.router.navigate(['auth']);
+          this.router.navigate(['pages/products']);
         },
         error: (err) => {
           alert(err);
