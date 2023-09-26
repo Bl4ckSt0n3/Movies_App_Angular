@@ -1,13 +1,14 @@
-import { Component, TemplateRef, ViewChild, inject } from '@angular/core';
+import { Component, HostListener, TemplateRef, ViewChild, inject } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { faSignIn, faEyeDropper, faEye, faEyeSlash, faUserPlus, faUser, faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, NgControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
+
   faSignIn = faSignIn;
   faEyeDropper = faEyeDropper;
   faEye = faEye;
@@ -26,6 +27,13 @@ export class RegisterComponent {
     password: new FormControl('', [Validators.required]),
     age: new FormControl('', [Validators.required]),
   });
+
+  // accept only numeric character for age input
+  numericOnly(event: any): boolean {
+    let patt = /^([0-9])$/;
+    let result = patt.test(event.key);
+    return result;
+  }
 
   onChangeShow(): void {
     this.show = !this.show;
