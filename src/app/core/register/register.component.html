@@ -54,7 +54,7 @@
                                             <fa-icon *ngIf="!show" [icon]="faEyeSlash"></fa-icon>
                                         </span>
                                     </div>
-                                    <div *ngIf="_fControls['password'].invalid && _fControls['password'].touched && _fControls['password'].dirty" class="invalid-feedback">
+                                    <div *ngIf="_fControls['password'].invalid && _fControls['password'].touched" class="invalid-feedback">
                                         <div *ngIf="_fControls['password'].hasError('required')"> 
                                             Password is required!
                                         </div>
