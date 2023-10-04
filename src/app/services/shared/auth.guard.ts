@@ -8,6 +8,7 @@ export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: R
   const jwtHelper: JwtHelperService = inject(JwtHelperService);
   
   if (token && !jwtHelper.isTokenExpired(token)) {
+    // jwtHelper.decodeToken(token)
     //router.createUrlTree(['pages/products']); // it is a data structure that provides some utilities like Router.navigate
     return true;
   }

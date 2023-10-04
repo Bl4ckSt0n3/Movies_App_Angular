@@ -15,7 +15,7 @@ input:focus, input.form-control:focus {
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
 }
-.form-control {
+.form-control, .input-group-append, .input-group-text {
     height: 50px;
     font-size: 18px;
     font-family: 'Open Sans', sans-serif;
@@ -24,8 +24,12 @@ input:focus, input.form-control:focus {
     border-radius: 0;
     text-decoration: none;
 }
-.form-control:focus {
+.form-control:focus, .input-group-text {
     border-bottom: 3px solid #083156;
+}
+
+.input-group-append, .input-group-text {
+    background-color: #fff;
 }
 
 .email-label .password-label {

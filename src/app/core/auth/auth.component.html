@@ -28,7 +28,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group ps-3 pe-3 p-2">
+                        <div class="form-group input-group ps-3 pe-3 p-2">
                             <input 
                             [type]="show ? 'text' : 'password'" 
                             class="form-control mt-2" 
@@ -38,6 +38,12 @@
                             [class.is-invalid]="_fControls['password'].invalid && _fControls['password'].touched"
                             required
                             >
+                            <div class="input-group-append mt-2" (click)="onChangeShow()">
+                                <span class="input-group-text" id="basic-addon2">
+                                    <fa-icon *ngIf="show" [icon]="faEye"></fa-icon>
+                                    <fa-icon *ngIf="!show" [icon]="faEyeSlash"></fa-icon>
+                                </span>
+                            </div>
                             <div *ngIf="_fControls['password'].invalid && _fControls['password'].touched" class="invalid-feedback">
                                 <div *ngIf="_fControls['password'].hasError('required')"> 
                                     Password is required!
@@ -50,15 +56,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group ps-3 pe-3">
-                            <a href="#" class="forget float-end">forgot password?</a>
-                        </div>
-                        <div class="form-group ps-3 pe-3  ms-2" (click)="onChangeShow()">
-                            <fa-icon *ngIf="show" [icon]="faEye"></fa-icon>
-                            <fa-icon *ngIf="!show" [icon]="faEyeSlash"></fa-icon>
-                        </div>
-                        <div class="form-group ps-3 pe-3 mt-3" style="text-align: center;">
+                        <div class="form-group ps-3 pe-3 float-end" >
                             <button type="submit" class="btn btn-primary login" (click)="submit()"><fa-icon [icon]="faSignIn"></fa-icon><span class="ms-2" style="font-size: 18px;">Sign in</span></button>
+                        </div>
+                        <div class="form-group ps-3 pe-3">
+                            <a href="#" class="forget ">forgot password?</a>
                         </div>
                     </form>     
                 </div>
