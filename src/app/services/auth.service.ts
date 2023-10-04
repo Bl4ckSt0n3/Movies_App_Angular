@@ -6,7 +6,7 @@ import { Observable, catchError, map } from 'rxjs';
 })
 export class AuthService {
 
-  private authEndpoint: string = '/api/Authentication'
+  private authEndpoint: string = '/api/Authentication/auth'
   constructor(private httpClient: HttpClient) { }
 
   public auth(authForm: any): Observable<IAuthResponse> {

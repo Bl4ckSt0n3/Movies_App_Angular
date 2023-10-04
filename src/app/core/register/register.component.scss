@@ -20,7 +20,7 @@ input:focus, input.form-control:focus {
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
 }
-.form-control {
+.form-control, .input-group-append, .input-group-text {
     height: 50px;
     font-size: 18px;
     font-family: 'Open Sans', sans-serif;
@@ -31,6 +31,13 @@ input:focus, input.form-control:focus {
 }
 .form-control:focus {
     border-bottom: 3px solid #083156;
+}
+.input-group-append, .input-group-text {
+    background-color: #fff;
+}
+
+.input-group {
+    width: 80%;
 }
 
 .email-label .password-label {
@@ -47,4 +54,8 @@ input:focus, input.form-control:focus {
 
 .icon{
     background-color: #fff;
+}
+
+.icon-user {
+    position: absolute;
 }

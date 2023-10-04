@@ -1,7 +1,8 @@
-import { Component, HostListener, TemplateRef, ViewChild, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { faSignIn, faEyeDropper, faEye, faEyeSlash, faUserPlus, faUser, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { FormControl, FormGroup, NgControl, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -18,6 +19,8 @@ export class RegisterComponent {
   faUserCircle = faUserPlus;
 
   show: boolean = false;
+
+  constructor(private userService: UserService,) {}
 
   registerForm = new FormGroup({
     username: new FormControl('', [Validators.required]),
@@ -41,7 +44,19 @@ export class RegisterComponent {
   //https://www.infragistics.com/community/blogs/b/infragistics/posts/angular-observable-vs-angular-promise
   // https://thoughtbot.com/blog/transitions-and-transforms
   // https://www.angularjswiki.com/angular/how-to-use-font-awesome-icons-in-angular-applications/
-  public onSubmit(): void {
-    
+  public submit(): void {
+
+    // form validation should be added
+    this.userService.create(this.registerForm).subscribe({
+      next: (value: any) => {
+        if (value.success) {
+          this.registerForm.reset();
+          alert("success! " + value.success);
+        }
+      },
+      error(err) {
+        alert(err);
+      },
+    })
   }
 }
