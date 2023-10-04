@@ -20,35 +20,134 @@
                             <form [formGroup]="registerForm" class="row g-3 d-flex justify-content-center pb-3">
                                 <div class="input-group col-md-8 pe-2">
                                     <!-- <label for="inputEmail4" class="form-label">Email</label> -->
-                                    <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
+                                    <input 
+                                    type="email" 
+                                    class="form-control" 
+                                    id="email" 
+                                    placeholder="Email" 
+                                    formControlName="email"
+                                    [class.is-invalid]="_fControls['email'].invalid && _fControls['email'].touched"
+                                    required
+                                >
+                                    <div *ngIf="_fControls['email'].invalid && _fControls['email'].touched" class="invalid-feedback">
+                                        <div *ngIf="_fControls['email'].hasError('required')"> 
+                                            Email is required!
+                                        </div>
+                                        <div *ngIf="_fControls['email'].hasError('email')"> 
+                                            Please enter a valid email.
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="input-group col-md-8 pe-2 has-feedback has-feedback-left">
                                   <!-- <label for="inputPassword4" class="form-label">Password</label> -->
-                                    <input [type]="show ? 'text' : 'password'" class="form-control" id="password" placeholder="Password" formControlName="password">
+                                    <input 
+                                    [type]="show ? 'text' : 'password'" 
+                                    class="form-control" 
+                                    id="password" 
+                                    placeholder="Password" 
+                                    formControlName="password"
+                                    [class.is-invalid]="_fControls['password'].invalid && _fControls['password'].touched"
+                                    >
                                     <div class="input-group-append" (click)="onChangeShow()">
                                         <span class="input-group-text" id="basic-addon2">
                                             <fa-icon *ngIf="show" [icon]="faEye"></fa-icon>
                                             <fa-icon *ngIf="!show" [icon]="faEyeSlash"></fa-icon>
                                         </span>
                                     </div>
+                                    <div *ngIf="_fControls['password'].invalid && _fControls['password'].touched && _fControls['password'].dirty" class="invalid-feedback">
+                                        <div *ngIf="_fControls['password'].hasError('required')"> 
+                                            Password is required!
+                                        </div>
+                                        <div *ngIf="_fControls['password'].hasError('customValidator')">
+                                            Password should be include at least one special character, number,
+                                            upper and lower case. 
+                                        </div>
+                                        <div *ngIf="_fControls['password'].hasError('minlength')">
+                                            Password should be longer than 8 characters.
+                                        </div>
+                                        <div *ngIf="_fControls['password'].hasError('maxlength')">
+                                            Password should be less than 16 characters.
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="input-group col-8 pe-2">
                                   <!-- <label for="inputAddress" class="form-label">Name</label> -->
-                                    <input type="text" class="form-control" id="name" placeholder="Name" formControlName="name">
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="name" 
+                                    placeholder="Name" 
+                                    formControlName="name"
+                                    [class.is-invalid]="_fControls['name'].invalid && _fControls['name'].touched"
+                                    >
+                                    <div *ngIf="_fControls['name'].invalid && _fControls['name'].touched" class="invalid-feedback">
+                                        <div *ngIf="_fControls['name'].hasError('required')"> 
+                                            Name is required!
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="input-group col-8 pe-2">
                                   <!-- <label for="inputAddress2" class="form-label">Second Name</label> -->
-                                    <input type="text" class="form-control" id="secondName" placeholder="Second Name" formControlName="secondName">
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="secondName" 
+                                    placeholder="Second Name" 
+                                    formControlName="secondName"
+                                    [class.is-invalid]="_fControls['secondName'].invalid && _fControls['secondName'].touched"
+                                    >
+                                    <div *ngIf="_fControls['secondName'].invalid && _fControls['secondName'].touched" class="invalid-feedback">
+                                        <div *ngIf="_fControls['secondName'].hasError('required')"> 
+                                            Secondname is required!
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="input-group col-md-8 pe-2">
                                   <!-- <label for="inputCity" class="form-label">City</label> -->
-                                    <input type="text" class="form-control" id="username" placeholder="Username" formControlName="username">
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="username" 
+                                    placeholder="Username" 
+                                    formControlName="username"
+                                    [class.is-invalid]="_fControls['username'].invalid && _fControls['username'].touched"
+                                    >
+                                    <div *ngIf="_fControls['username'].invalid && _fControls['username'].touched" class="invalid-feedback">
+                                        <div *ngIf="_fControls['username'].hasError('required')"> 
+                                            Username is required!
+                                        </div>
+                                        <div *ngIf="_fControls['username'].hasError('minlength')"> 
+                                            Username should be longer than 8 characters.
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="input-group col-md-8 pe-2">
-                                    <input (keypress)="numericOnly($event)"  type="number" class="form-control" id="age" placeholder="Age" formControlName="age">
+                                    <input 
+                                    (keypress)="numericOnly($event)"  
+                                    type="number" 
+                                    class="form-control" 
+                                    id="age" 
+                                    placeholder="Age" 
+                                    formControlName="age"
+                                    [class.is-invalid]="_fControls['age'].invalid && _fControls['age'].touched"
+                                    >
+                                    <div *ngIf="_fControls['age'].invalid && _fControls['age'].touched" class="invalid-feedback">
+                                        <div *ngIf="_fControls['age'].hasError('required')"> 
+                                            Age is required!
+                                        </div>
+                                        <div *ngIf="_fControls['age'].hasError('max')"> 
+                                            Age should be less 99.
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-8 input-group">
-                                    <button (click)="submit()" type="submit" class="btn sign-in float-end mt-2" style="min-width: 100%; height: 45px;">Sign in</button>
+                                    <button 
+                                    (click)="submit()" 
+                                    type="submit" 
+                                    class="btn sign-in float-end mt-2" 
+                                    style="min-width: 100%; height: 45px;"
+                                    >Sign in
+                                    </button>
                                 </div>
                             </form>
                         </div>

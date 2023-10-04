@@ -3,11 +3,15 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { faSignIn, faEyeDropper, faEye, faEyeSlash, faUserPlus, faUser, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { FormControl, FormGroup, NgControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
+import { StateMatcher } from 'src/app/services/shared/helpers/StateMatcher';
+
+const cst = new StateMatcher();
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
+
 export class RegisterComponent {
 
   faSignIn = faSignIn;
@@ -20,16 +24,36 @@ export class RegisterComponent {
 
   show: boolean = false;
 
-  constructor(private userService: UserService,) {}
+  constructor(private userService: UserService,) {
+    
+  }
 
   registerForm = new FormGroup({
-    username: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required]),
+    username: new FormControl('', [
+      Validators.required, 
+      Validators.minLength(8)
+    ]),
+    email: new FormControl('', [
+      Validators.required, 
+      Validators.email
+    ]),
     name: new FormControl('', [Validators.required]),
     secondName: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required]),
-    age: new FormControl('', [Validators.required]),
+    password: new FormControl('', [
+      Validators.required, 
+      Validators.minLength(8), 
+      Validators.maxLength(16),
+      cst.passwordValidator()
+    ]),
+    age: new FormControl('', [
+      Validators.required, 
+      Validators.max(99)
+    ]),
   });
+
+  public get _fControls() {
+    return this.registerForm.controls;
+  }
 
   // accept only numeric character for age input
   numericOnly(event: any): boolean {
