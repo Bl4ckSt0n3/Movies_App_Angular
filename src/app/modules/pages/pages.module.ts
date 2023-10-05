@@ -7,12 +7,14 @@ import { MoviesComponent } from './movies/movies.component';
 import { HighlightDirective } from '../../directives/highlight.directive';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductsComponent } from './products/products.component';
 
 
 @NgModule({
   declarations: [
     MoviesComponent,
-    HighlightDirective
+    HighlightDirective,
+    ProductsComponent,
   ],
   imports: [
     CommonModule,

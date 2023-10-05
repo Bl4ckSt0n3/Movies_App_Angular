@@ -6,6 +6,7 @@ import { authGuard } from 'src/app/services/shared/auth.guard';
 
 const routes: Routes = [
   { path: 'movies', component: MoviesComponent },
+  // { path: 'products:id', component: ProductsComponent, canActivate: [authGuard] },
   { path: 'products', component: ProductsComponent, canActivate: [authGuard] },
 ];
 
